@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -54,20 +55,20 @@ public class CircularListTest {
     void testNext(){
         addElement();
 
-        assertEquals(3,circularList.next().get());
-        assertEquals(5,circularList.next().get());
-        assertEquals(2,circularList.next().get());
-        assertEquals(3,circularList.next().get());
+        assertEquals(Optional.of(3),circularList.next());
+        assertEquals(Optional.of(5),circularList.next());
+        assertEquals(Optional.of(2),circularList.next());
+        assertEquals(Optional.of(3),circularList.next());
     }
 
     @Test
     void testPrevious(){
         addElement();
 
-        assertEquals(5,circularList.previous().get());
-        assertEquals(3,circularList.previous().get());
-        assertEquals(2,circularList.previous().get());
-        assertEquals(5,circularList.previous().get());
+        assertEquals(Optional.of(5),circularList.previous());
+        assertEquals(Optional.of(3),circularList.previous());
+        assertEquals(Optional.of(2),circularList.previous());
+        assertEquals(Optional.of(5),circularList.previous());
 
     }
 
