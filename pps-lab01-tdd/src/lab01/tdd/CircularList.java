@@ -1,5 +1,6 @@
 package lab01.tdd;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -44,4 +45,7 @@ public interface CircularList {
      * Note the first one is the first added to the list.
      */
     void reset();
+
+
+    List<Integer> getList();
 }
